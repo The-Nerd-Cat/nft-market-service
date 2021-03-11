@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "prettier --write './**/*.{js,jsx,ts,tsx}'",
-    "start": "serverless invoke local --function hello"
+    "start": "sls offline"
   },
   "dependencies": {
     "ipfs-http-client": "^49.0.4",
