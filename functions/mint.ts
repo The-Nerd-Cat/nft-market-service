@@ -38,6 +38,9 @@ const mint: APIGatewayProxyHandler = async (event, _context) => {
     return {
       statusCode: 200,
       body: JSON.stringify(objectsIPFS),
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     }
   } catch (e) {
     console.log(e)
@@ -45,6 +48,9 @@ const mint: APIGatewayProxyHandler = async (event, _context) => {
     return {
       statusCode: 500,
       body: JSON.stringify(e),
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     }
   }
 }

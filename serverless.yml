@@ -33,9 +33,11 @@ functions:
       - http:
           method: post
           path: mint
+          cors: true
   token:
     handler: handler.token
     events:
       - http:
           method: get
           path: token
+          cors: true

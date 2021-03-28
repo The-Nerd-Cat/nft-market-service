@@ -72,11 +72,17 @@ const token: APIGatewayProxyHandler = async (event, _context) => {
     return {
       statusCode: 200,
       body: JSON.stringify(tokenProps[id]),
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     }
   } catch (e) {
     return {
       statusCode: 500,
       body: JSON.stringify(e),
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     }
   }
 }
