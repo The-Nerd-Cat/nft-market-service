@@ -1,5 +1,5 @@
 service:
-  name: ipfs
+  name: marketplace-service
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -19,6 +19,8 @@ plugins:
 provider:
   name: aws
   runtime: nodejs12.x
+  stage: dev
+  region: eu-west-2
   apiGateway:
     minimumCompressionSize: 1024 # Enable gzip compression for responses > 1 KB
   environment:
@@ -31,3 +33,9 @@ functions:
       - http:
           method: post
           path: mint
+  token:
+    handler: handler.token
+    events:
+      - http:
+          method: get
+          path: token
